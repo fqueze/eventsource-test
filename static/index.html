@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Source demo</title>
+<script>
+function setupEventSource() {
+  var source = new EventSource("events");
+  source.addEventListener("ping", function(e) {document.getElementById("update").textContent = new Date();}, false);
+}
+</script>
+</head>
+<body onload="setupEventSource()">
+<p>Last ping at: <span id="update">never</span></p>
+</body>
+</html>
